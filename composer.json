@@ -1,6 +1,6 @@
 {
     "name": "kivagant/runonce",
-    "description": "Provides functionality to recursively process PHP variables",
+    "description": "Run any shell command only once (deny concurrent execution)",
     "keywords": ["shell", "pid", "once"],
     "homepage": "https://github.com/KIVagant/runonce",
     "license": "Apache License v2.0",
