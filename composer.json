@@ -1,0 +1,24 @@
+{
+    "name": "kivagant/runonce",
+    "description": "Provides functionality to recursively process PHP variables",
+    "keywords": ["shell", "pid", "once"],
+    "homepage": "https://github.com/KIVagant/runonce",
+    "license": "Apache License v2.0",
+    "authors": [
+        {
+            "name": "Eugene Glotov",
+            "email": "kivagant@gmail.com"
+        }
+    ],
+    "require": {
+        "liip/process-manager": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KIVagant\\": "src/"
+        }
+    },
+    "bin": [
+        "lock"
+    ]
+}

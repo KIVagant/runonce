@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Warning! Only Unix is supported! This script does not working either in OSX nor in Windows.
+ *
+ * Usage:
+ *  ./runonce your-command
+ * Or with debug output:
+ *  ./runonce  -v your-command
+ * Example: ./runonce php ./cron.php -v=\"2\" && echo 'executed';
+ * @link https://github.com/KIVagant/runonce
+ */
+
+use Liip\ProcessManager\ProcessManager;
+
+// Lock-files will be stored in this directory
+define('PID_DIR', __DIR__ . '/../pid/');
+
+// The pid-file must contain the name, unique to this group of tasks that can not be executed synchronously
+define('PID_FILE', str_replace('/', '.', __FILE__));
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$processManager = new ProcessManager();
+
+exit((int)!(new \KIVagant\RunOnce\RunOnce($processManager, $argv))
+    ->__invoke());
