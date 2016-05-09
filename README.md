@@ -30,20 +30,20 @@ Usage and examples
 Basic usage:
 
 ```
- ./bin/runonce your-command
+ ./vendor/bin/runonce your-command
 ```
 
 Verbose output:
 ```
- ./bin/runonce -v your-command
+ ./vendor/bin/runonce -v your-command
 ```
 
 Example:
 ```
-./bin/runonce php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
+./vendor/bin/runonce php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
 > first launch
 
-./bin/runonce -v php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
+./vendor/bin/runonce -v php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
 > Command was already executed with PID  20438
 > already running
 ```

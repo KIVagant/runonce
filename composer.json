@@ -19,6 +19,6 @@
         }
     },
     "bin": [
-        "lock"
+        "bin/runonce"
     ]
 }
