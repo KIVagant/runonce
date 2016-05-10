@@ -19,7 +19,7 @@ define('PID_DIR', __DIR__ . '/../pid/');
 // The pid-file must contain the name, unique to this group of tasks that can not be executed synchronously
 define('PID_FILE', str_replace('/', '.', __FILE__));
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $processManager = new ProcessManager();
 

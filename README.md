@@ -38,12 +38,21 @@ Verbose output:
  ./vendor/bin/runonce -v your-command
 ```
 
-Example:
+Example 1:
 ```
-./vendor/bin/runonce php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
+./vendor/bin/runonce sleep 10 && echo 'first launch' || echo 'already running';
 > first launch
 
-./vendor/bin/runonce -v php ./cron.php -v=\"2\" && echo 'first launch' || echo 'already running';
+./vendor/bin/runonce sleep 10 && echo 'first launch' || echo 'already running';
+> already running
+```
+
+Example 2:
+```
+./vendor/bin/runonce php ./cron.php -v=\"some string\" && echo 'first launch' || echo 'already running';
+> first launch
+
+./vendor/bin/runonce -v php ./cron.php -v=\"some string\" && echo 'first launch' || echo 'already running';
 > Command was already executed with PID  20438
 > already running
 ```
