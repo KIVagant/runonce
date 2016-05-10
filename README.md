@@ -38,16 +38,31 @@ Verbose output:
  ./vendor/bin/runonce -v your-command
 ```
 
-Example 1:
+**Example 1:**
+
+*Run first command:*
 ```
 ./vendor/bin/runonce sleep 10 && echo 'first launch' || echo 'already running';
 > first launch
+```
 
+*Run another one:* different options are considered as different processes.
+
+```
+./vendor/bin/runonce sleep 20 && echo 'first launch' || echo 'already running';
+> first launch
+```
+
+*Run the first command again:*
+```
 ./vendor/bin/runonce sleep 10 && echo 'first launch' || echo 'already running';
 > already running
 ```
 
-Example 2:
+**Example 2:**
+
+*More complex commands:*
+
 ```
 ./vendor/bin/runonce php ./cron.php -v=\"some string\" && echo 'first launch' || echo 'already running';
 > first launch
