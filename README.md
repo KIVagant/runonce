@@ -64,3 +64,7 @@ This tool based on the [liip/process-manager](http://github.com/liip/LiipProcess
 Contributing
 -----
 Just fork and send me a pull request.
+
+License
+-----
+Apache License 2.0
