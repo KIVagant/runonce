@@ -1,6 +1,8 @@
 RunOnce
 =======
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/KIVagant/runonce/badges/quality-score.png)](https://scrutinizer-ci.com/g/kivagant/runonce)
+
 About
 -----
 
