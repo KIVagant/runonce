@@ -40,16 +40,15 @@ class RunOnce
             return false;
         } catch (LockException $e) {
             $locker = $this->pidFile->getPid();
-            if (!$this->processManager->isProcessRunning($locker)) {
-                $this->debug($locker . ' lock released');
-                $this->releaseLock();
-                $this->acquireLock();
-                $this->execCommand();
-            } else {
+            if ($this->processManager->isProcessRunning($locker)) {
                 $this->debug('Command was already executed with PID ', $locker);
 
                 return false;
             }
+            $this->debug($locker . ' lock released');
+            $this->releaseLock();
+            $this->acquireLock();
+            $this->execCommand();
         }
 
         return true;
